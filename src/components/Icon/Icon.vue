@@ -4,11 +4,13 @@ import { computed, defineComponent } from 'vue';
 import Cancel from '../../assets/icons/cancel.vue';
 import CircleAlert from '../../assets/icons/circle-alert.vue';
 import QuestionMark from '../../assets/icons/question-mark.vue';
+import Select from '../../assets/icons/select.vue';
 
 const icons = {
   'cancel': Cancel,
   'circle-alert': CircleAlert,
   'question-mark': QuestionMark,
+  'select': Select,
 };
 
 export default defineComponent({
