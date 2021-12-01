@@ -1,6 +1,6 @@
 <script lang="ts">
 
-import { defineComponent } from 'vue';
+import { computed, defineComponent, onMounted, ref, watchEffect } from 'vue';
 import Icon from '../Icon/Icon.vue';
 
 export const DEFAULT_TOAST_DURATION = 5000;
@@ -9,23 +9,19 @@ export default defineComponent({
   components: { Icon },
 
   props: {
-    /**
-     * The content that should appear in the toast message.
-     */
+    /** The content that should appear in the toast message. */
     content: {
       type: String,
       required: true,
     },
-    /**
-     * If the toast is visible by default.
-     */
+
+    /** If the toast is visible by default. */
     isVisible: {
       type: Boolean,
       default: false,
     },
-    /**
-     * The length of time in milliseconds the toast message should persist.
-     */
+
+    /** The length of time in milliseconds the toast message should persist. */
     duration: {
       type: Number,
       default: DEFAULT_TOAST_DURATION,
@@ -38,8 +34,21 @@ export default defineComponent({
   },
 
   setup(props) {
+    const isMounted = ref(false);
+
+    onMounted(() => {
+      isMounted.value = true;
+    });
+
+    watchEffect(() => {
+      setTimeout(() => {
+        console.log('uitzetten');
+      }, props.duration);
+    });
+
     return {
-      visible: props.isVisible,
+      isMounted,
+      visible: computed(() => props.isVisible),
     };
   },
 });
@@ -47,7 +56,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <teleport to="#toast-target">
+  <teleport
+    v-if="isMounted"
+    to="#toast-manager"
+  >
     <div
       v-if="visible"
       ref="toast"
