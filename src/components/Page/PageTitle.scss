@@ -1,0 +1,13 @@
+@import "../../styles";
+
+.page-title {
+  @include text-breakword;
+  @include text-emphasis-strong;
+  font-size: rem(24px);
+  line-height: rem(28px);
+}
+
+.page-subtitle {
+  margin-top: spacing(tight);
+  color: color('gray', 600);
+}

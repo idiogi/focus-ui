@@ -1,0 +1,37 @@
+@import "../../styles";
+
+$backdrop-horizontal-spacing: spacing(tight) * 1.5;
+
+.text-field {
+  //@include text-style-input;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: text;
+}
+
+.text-field .text-field__input {
+  @include text-style-input;
+  position: relative;
+  display: block;
+  flex: 1 1 0%;
+  width: 100%;
+  min-width: 0;
+  min-height: control-height();
+  margin: 0;
+  padding: control-vertical-padding() $backdrop-horizontal-spacing;
+  background: color('white');
+  border: 1px solid color('gray',400);
+  border-radius: border-radius();
+  box-shadow: shadow(input);
+  font-family: inherit;
+  font-weight: inherit;
+  appearance: none;
+  outline: none;
+
+  &:focus {
+    border-color: color('blue', 600);
+    box-shadow: 0 0 0 3px color('blue', 300);
+  }
+}

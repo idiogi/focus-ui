@@ -1,0 +1,74 @@
+$font-family-data: (
+  base: #{-apple-system,
+  'BlinkMacSystemFont',
+  'San Francisco',
+  'Segoe UI',
+  'Roboto',
+  'Helvetica Neue',
+  sans-serif},
+  monospace: #{ui-monospace,
+  SFMono-Regular,
+  SF Mono,
+  Consolas,
+  Liberation Mono,
+  Menlo,
+  monospace},
+);
+
+$line-height-data: (
+  body: rem(20px),
+  input: rem(24px),
+  button: rem(16px),
+);
+
+$font-size-data: (
+  body: rem(15px),
+  input: rem(15px),
+  button: rem(14px),
+);
+
+/// Returns the line height for a given text style and variant.
+///
+/// @param {String} $style - The font style.
+/// @param {String} $variant [base] - The variant on the font-size.
+/// @return {Number} The line-height for the text-style.
+
+@function line-height($style) {
+  $fetched-line-height: map-get($line-height-data, $style);
+
+  @if type-of($fetched-line-height) {
+    @return $fetched-line-height;
+  } @else {
+    @error 'Line height `#{$style} not found. Available line heights: #{available-names($line-height-data)}';
+  }
+}
+
+/// Returns the font size for a given text style.
+///
+/// @param {String} $style - The font style.
+/// @return {Number} The font-size for the text-style.
+
+@function font-size($style) {
+  $fetched-font-size: map-get($font-size-data, $style);
+
+  @if type-of($fetched-font-size) {
+    @return $fetched-font-size;
+  } @else {
+    @error 'Font size `#{$style}  not found. Available font sizes: #{available-names($font-size-data)}';
+  }
+}
+
+/// Returns the font stack for a given family.
+///
+/// @param {String} $family - The key for the given family.
+/// @return {Number} The font stack for the family.
+
+@function font-family($family: base) {
+  $fetched-value: map-get($font-family-data, $family);
+
+  @if $fetched-value {
+    @return $fetched-value;
+  } @else {
+    @error 'Font family `#{$family}` not found. Available font families: #{available-names($font-family-data)}';
+  }
+}

@@ -1,0 +1,41 @@
+@mixin button-base {
+  $min-height: control-height();
+  $vertical-padding: ($min-height - line-height(body) - rem(2px)) / 2;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $min-height;
+  min-width: $min-height;
+  margin: 0;
+  padding: $vertical-padding spacing();
+  border-radius: border-radius();
+  box-shadow: shadow();
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .spinner {
+    position: absolute;
+  }
+}
+
+@mixin unstyled-button {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}

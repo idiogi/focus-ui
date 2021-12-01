@@ -1,0 +1,33 @@
+@import "../../styles";
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: auto;
+  padding: 0.15em 1em;
+  font-size: 0.9em;
+  color: color('gray', 600);
+  background-color: color('gray', 200);
+  border-radius: 2em;
+  border: 1px solid white;
+
+  &.badge--status-success {
+    color: color('green', 900);
+    background-color: color('green', 200);
+  }
+
+  &.badge--status-info {
+    color: color('blue', 900);
+    background-color: color('blue', 200);
+  }
+
+  &.badge--status-attention {
+    color: color('yellow', 900);
+    background-color: color('yellow', 200);
+  }
+
+  &.badge--status-critical {
+    color: color('red', 900);
+    background-color: color('red', 200);
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../styles";
+
+.footer-help {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin: 2em;
+}
+
+.footer-help__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: spacing();
+  border: 1px solid color('gray', 200);
+  border-radius: border-radius(large);
+  font-size: 95%;
+}
+
+.footer-help__icon {
+  color: color('gray', 600);
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}

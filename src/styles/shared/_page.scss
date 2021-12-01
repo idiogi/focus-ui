@@ -1,0 +1,14 @@
+@mixin page-layout {
+  margin: 0 auto;
+  padding: 0 spacing(loose);
+  max-width: $page-max-width;
+}
+
+@mixin page-content-layout {
+  margin: spacing(tight) 0;
+  margin-top: spacing(tight);
+}
+
+@mixin page-header-layout {
+  padding: spacing(extra-loose) 0;
+}

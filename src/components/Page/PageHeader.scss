@@ -1,0 +1,15 @@
+@import "../../styles";
+
+.page-header {
+  @include page-header-layout;
+  position: relative;
+}
+
+.page-header__row {
+  display: flex;
+  justify-content: space-between;
+
+  + .page-header__row {
+    margin-top: spacing();
+  }
+}

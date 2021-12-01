@@ -1,0 +1,15 @@
+@import "../../styles";
+
+$item-min-size: rem(220px);
+
+.form-layout {
+  margin-top: -1 * spacing();
+  margin-left: -1 * spacing(loose);
+}
+
+.form-layout .form-layout__item {
+  flex: 1 1 $item-min-size;
+  margin-top: spacing();
+  margin-left: spacing(loose);
+  max-width: calc(100% - #{spacing(loose)});
+}

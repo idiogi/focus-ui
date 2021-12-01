@@ -1,0 +1,85 @@
+@import "../../styles";
+
+$secondary-basis: layout-width(secondary, min);
+$primary-basis: layout-width(primary, min);
+$one-half-basis: layout-width(one-half-width, base);
+$one-third-basis: layout-width(one-third-width, base);
+$relative-size: $primary-basis / $secondary-basis;
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: -1 * spacing();
+  margin-left: -1 * spacing(loose);
+}
+
+.layout__section {
+  flex: $relative-size $relative-size $primary-basis;
+  min-width: 51%;
+}
+
+.layout__section--secondary {
+  flex: 1 1 $secondary-basis;
+  min-width: 0;
+}
+
+.layout__section--full-width {
+  flex: 1 1 100%;
+}
+
+.layout__section--one-half {
+  flex: 1 1 $one-half-basis;
+  min-width: 0;
+}
+
+.layout__section--one-third {
+  flex: 1 1 $one-third-basis;
+  min-width: 0;
+}
+
+.layout__annotated-section {
+  min-width: 0;
+  flex: 1 1 100%;
+}
+
+.layout__section,
+.layout__annotated-section {
+  max-width: calc(100% - #{spacing(loose)});
+  margin-top: spacing();
+  margin-left: spacing(loose);
+
+  + .layout__annotated-section {
+    padding-top: spacing();
+    border-top: 1px solid color('gray', 400);
+  }
+}
+
+.layout__annotated-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1 * spacing();
+  margin-left: -1 * spacing(loose);
+}
+
+.layout__annotated-content {
+  flex: $relative-size $relative-size $primary-basis;
+}
+
+.layout__annotated {
+  flex: 1 1 $secondary-basis;
+  padding: spacing(loose) spacing(loose) spacing(loose) 0;
+}
+
+.layout__annotated,
+.layout__annotated-content {
+  min-width: 0;
+  max-width: calc(100% - #{spacing(loose)});
+  margin-top: spacing();
+  margin-left: spacing(loose);
+}
+
+.layout__annotated-description {
+  @include text-emphasis-subdued;
+}

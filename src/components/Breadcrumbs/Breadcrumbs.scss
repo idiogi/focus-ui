@@ -1,0 +1,16 @@
+@import "../../styles";
+
+.breadcrumb {
+  @include text-style-body;
+  @include text-emphasis-subdued;
+  @include unstyled-button;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: control-height();
+  min-width: control-height();
+  text-decoration: none;
+  margin: 0;
+  border-radius: border-radius();
+}

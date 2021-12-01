@@ -1,0 +1,113 @@
+@import "../../styles";
+
+@mixin stack-spacing($spacing: base) {
+  margin-top: -1 * spacing($spacing);
+  margin-left: -1 * spacing($spacing);
+
+  > .stack-item {
+    margin-top: spacing($spacing);
+    margin-left: spacing($spacing);
+    max-width: 100%;
+  }
+}
+
+.stack {
+  @include stack-spacing;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.stack--no-wrap {
+  flex-wrap: nowrap;
+}
+
+.stack--spacing-none {
+  @include stack-spacing(none);
+}
+
+.stack--spacing-extra-tight {
+  @include stack-spacing(extra-tight);
+}
+
+.stack--spacing-tight {
+  @include stack-spacing(tight);
+}
+
+.stack--spacing-base-tight {
+  @include stack-spacing(base-tight);
+}
+
+.stack--spacing-loose {
+  @include stack-spacing(loose);
+}
+
+.stack--spacing-extra-loose {
+  @include stack-spacing(extra-loose);
+}
+
+.stack--distribution-leading {
+  justify-content: flex-start;
+}
+
+.stack--distribution-trailing {
+  justify-content: flex-end;
+}
+
+.stack--distribution-center {
+  justify-content: center;
+}
+
+.stack--distribution-equal-spacing {
+  justify-content: space-between;
+}
+
+.stack--distribution-fill > .stack-item {
+  flex: 1 1 auto;
+}
+
+.stack--distribution-fill-evenly > .stack-item {
+  flex: 1 1 auto;
+
+  @supports (min-width: fit-content) {
+    flex: 1 0 0%;
+    min-width: fit-content;
+  }
+}
+
+.stack--alignment-leading {
+  align-items: flex-start;
+}
+
+.stack--alignment-trailing {
+  align-items: flex-end;
+}
+
+.stack--alignment-center {
+  align-items: center;
+}
+
+.stack--alignment-fill {
+  align-items: stretch;
+}
+
+.stack--alignment-baseline {
+  align-items: baseline;
+}
+
+.vertical {
+  flex-direction: column;
+  margin-left: spacing(none);
+
+  > .stack-item {
+    margin-left: spacing(none);
+  }
+}
+
+.stack-item {
+  flex: 0 0 auto;
+}
+
+.stack-item--fill {
+  flex: 1 1 auto;
+}

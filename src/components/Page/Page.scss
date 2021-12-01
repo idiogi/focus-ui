@@ -1,0 +1,20 @@
+@import "../../styles";
+
+.page {
+  @include page-layout();
+
+  // Ensure bottom margins of any children are contained
+  &::after {
+    content: '';
+    // stylelint-disable-next-line declaration-property-value-disallowed-list
+    display: table;
+  }
+}
+
+.page--full-width {
+  max-width: none;
+}
+
+.page__content {
+  @include page-content-layout;
+}

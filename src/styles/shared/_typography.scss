@@ -1,0 +1,52 @@
+@mixin text-style-body {
+  font-size: font-size(body);
+  font-weight: 400;
+  line-height: line-height(body);
+  text-transform: initial;
+  letter-spacing: initial;
+}
+
+@mixin text-style-heading {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: initial;
+  letter-spacing: initial;
+}
+
+@mixin text-emphasis-normal {
+  font-weight: 400;
+}
+
+@mixin text-emphasis-subdued {
+  color: color('gray', 500);
+}
+
+@mixin text-emphasis-strong {
+  font-weight: 600;
+}
+
+@mixin text-style-input {
+  font-size: font-size(input);
+  font-weight: 400;
+  line-height: line-height(input);
+  border: none;
+
+  text-transform: initial;
+  letter-spacing: initial;
+}
+
+@mixin text-breakword {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@mixin text-style-button {
+  font-size: font-size(button);
+  font-weight: 400;
+  line-height: line-height(button);
+
+  text-transform: initial;
+  letter-spacing: initial;
+}

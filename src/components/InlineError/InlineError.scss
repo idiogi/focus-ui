@@ -1,0 +1,15 @@
+@import "../../styles";
+
+$error-icon-adjustment: rem(2px);
+
+.inline-error {
+  display: flex;
+  color: color('red', 600);
+  fill: color('red', 600);
+}
+
+.inline-error__icon {
+  display: flex;
+  margin-left: -1 * $error-icon-adjustment;
+  margin-right: spacing(extra-tight) + $error-icon-adjustment;
+}
