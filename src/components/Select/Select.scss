@@ -1,0 +1,74 @@
+@import "../../styles";
+
+$stacking-order: (
+  backdrop: 10,
+  content: 20,
+  input: 30,
+);
+
+.select-input {
+  position: relative;
+
+  // IE 11 fix to remove default dropdown arrow
+  select::-ms-expand {
+    display: none;
+  }
+
+  select {
+    // Even though the input is invisible, text styles apply to the options menu
+    @include text-style-input;
+    position: absolute;
+    // Required to solve a bug causing Safari 13 to crash https://bugs.webkit.org/show_bug.cgi?id=202055
+    text-rendering: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    // ChromeVox may hide content set to opacity: 0
+    opacity: 0.001;
+    appearance: none;
+    z-index: 30;
+  }
+}
+
+.select-input__content {
+  @include text-style-input;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: control-height();
+  padding: control-vertical-padding() spacing(tight) control-vertical-padding() spacing(base-tight);
+  z-index: 20;
+  background-color: transparent;
+}
+
+.select-input__selected-option {
+  flex: 1 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select-input__backdrop {
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: color('white');
+  border: 1px solid color('gray', 400);
+  border-radius: border-radius();
+  box-shadow: shadow(input);
+  // 'position' needs to sit below focus-ring since it will be overwritten
+  // with relative when the focus ring style is 'base'
+  // stylelint-disable-next-line order/properties-order
+  position: absolute;
+}
+
+.select-input:focus-within {
+  .select-input__backdrop {
+    @include focus-ring();
+  }
+}
