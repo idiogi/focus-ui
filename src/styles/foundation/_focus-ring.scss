@@ -1,0 +1,4 @@
+@mixin focus-ring() {
+  border-color: color('blue', 600);
+  box-shadow: 0 0 0 3px color('blue', 300);
+}
