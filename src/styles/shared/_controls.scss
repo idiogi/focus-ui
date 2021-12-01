@@ -1,7 +1,9 @@
+@use "sass:math";
+
 @function control-height() {
   @return rem(36px);
 }
 
 @function control-vertical-padding() {
-  @return (control-height() - line-height(input) - rem(2px)) / 2;
+  @return math.div(control-height() - line-height(input) - rem(2px), 2);
 }

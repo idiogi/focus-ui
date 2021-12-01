@@ -1,6 +1,8 @@
+@use "sass:math";
+
 @mixin button-base {
   $min-height: control-height();
-  $vertical-padding: ($min-height - line-height(body) - rem(2px)) / 2;
+  $vertical-padding: math.div($min-height - line-height(body) - rem(2px), 2);
 
   position: relative;
   display: inline-flex;
