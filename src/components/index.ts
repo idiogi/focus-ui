@@ -13,9 +13,13 @@ export {
   CardSection,
 } from './Card';
 
+export { FooterHelp } from './FooterHelp';
+
 export { Form } from './Form';
 
 export { FormLayout } from './FormLayout';
+
+export { Frame } from './Frame';
 
 export { Heading } from './Heading';
 
@@ -46,6 +50,8 @@ export {
   Alignment as StackAlignment,
   Distribution as StackDistribution,
 } from './Stack';
+
+export { TextContainer } from './TextContainer';
 
 export { TextField } from './TextField';
 
