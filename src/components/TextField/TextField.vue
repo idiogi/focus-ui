@@ -112,7 +112,9 @@ export default defineComponent({
 </script>
 
 <template>
-  <div :class="classes">
+  <div
+    :class="classes"
+  >
     <InputLabel
       v-if="label"
       :label="label"

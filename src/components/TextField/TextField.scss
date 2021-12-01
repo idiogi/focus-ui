@@ -22,7 +22,7 @@ $backdrop-horizontal-spacing: spacing(tight) * 1.5;
   margin: 0;
   padding: control-vertical-padding() $backdrop-horizontal-spacing;
   background: color('white');
-  border: 1px solid color('gray',400);
+  border: 1px solid color('gray', 400);
   border-radius: border-radius();
   box-shadow: shadow(input);
   font-family: inherit;
@@ -31,7 +31,6 @@ $backdrop-horizontal-spacing: spacing(tight) * 1.5;
   outline: none;
 
   &:focus {
-    border-color: color('blue', 600);
-    box-shadow: 0 0 0 3px color('blue', 300);
+    @include focus-ring();
   }
 }
