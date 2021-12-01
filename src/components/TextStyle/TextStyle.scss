@@ -1,0 +1,21 @@
+@import "../../styles";
+
+.text-style--positive {
+  color: color('green', 600);
+}
+
+.text-style--negative {
+  color: color('red', 600);
+}
+
+.text-style--strong {
+  font-weight: 700;
+}
+
+.text-style--subdued {
+  color: color('gray', 600);
+}
+
+.text-style--code {
+  font-family: font-family(monospace);
+}

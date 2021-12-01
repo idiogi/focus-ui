@@ -55,6 +55,11 @@ export { TextContainer } from './TextContainer';
 
 export { TextField } from './TextField';
 
+export {
+  TextStyle,
+  Variation as TextStyleVariation,
+} from './TextStyle';
+
 export { Toast } from './Toast';
 
 export { VisuallyHidden } from './VisuallyHidden';
