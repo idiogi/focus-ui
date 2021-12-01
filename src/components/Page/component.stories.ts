@@ -13,7 +13,7 @@ export const DefaultPage = (args) => ({
   },
 
   template: `
-    <Page title="3/4 inch Leather pet collar" subtitle="Perfect for any pet">
+    <Page title="3/4 inch Leather pet collar" subtitle="Perfect for any pet" :breadcrumbs="[{'content': 'test gave dingen'}]">
       <p>Page content</p>
     </Page>
   `,

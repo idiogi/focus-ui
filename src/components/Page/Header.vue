@@ -1,8 +1,9 @@
 <script lang="ts">
 
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import Title from './Title.vue';
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs.vue';
+import { CallbackAction, LinkAction } from '../../types';
 
 export default defineComponent({
   components: { Breadcrumbs, Title },
@@ -24,10 +25,19 @@ export default defineComponent({
     /** Primary page-level action. */
     primaryAction: {
       type: Object,
+      default: null,
     },
 
+    /** Collection of secondary page-level actions. */
     secondaryAction: {
       type: Object,
+      default: null,
+    },
+
+    /** Collection of breadcrumbs */
+    breadcrumbs: {
+      type: Array as PropType<(CallbackAction | LinkAction)[]>,
+      default: () => ([]),
     },
   },
 
@@ -41,7 +51,10 @@ export default defineComponent({
 <template>
   <div class="page-header">
     <div class="page-header__row">
-      <Breadcrumbs :breadcrumbs="[{ content: 'Products' }]" />
+      <Breadcrumbs
+        v-if="breadcrumbs.length > 0"
+        :breadcrumbs="breadcrumbs"
+      />
     </div>
     <div class="page-header__row">
       <Title
