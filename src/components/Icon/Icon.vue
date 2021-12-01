@@ -18,10 +18,19 @@ export default defineComponent({
       required: true,
       validator: (value: string): boolean => Object.prototype.hasOwnProperty.call(icons, value),
     },
+
+    large: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   setup(props) {
     return {
+      classes: computed(() => ([
+        'icon',
+        { 'icon--large': props.large },
+      ])),
       iconComponent: computed(() => {
         return icons[props.icon];
       }),
@@ -32,7 +41,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="icon">
+  <div :class="classes">
     <div class="icon__image">
       <component
         :is="iconComponent"
