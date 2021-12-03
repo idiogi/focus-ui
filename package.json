@@ -1,17 +1,17 @@
 {
   "name": "@idiogi/focus-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "./dist/equal-vue.umd.js",
-  "module": "./dist/equal-vue.es.js",
+  "main": "./dist/focus-ui.umd.js",
+  "module": "./dist/focus-ui.es.js",
   "exports": {
     ".": {
-      "import": "./dist/equal-vue.es.js",
-      "require": "./dist/equal-vue.umd.js"
+      "import": "./dist/focus-ui.es.js",
+      "require": "./dist/focus-ui.umd.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "unpkg": "dist/equal.umd.min.js",
+  "unpkg": "dist/focus-ui.umd.min.js",
   "types": "src/types/index.d.ts",
   "scripts": {
     "build": "vite build",
