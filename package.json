@@ -27,6 +27,7 @@
   "dependencies": {
     "vue": "^3.2.22"
   },
+  "private": false,
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@storybook/addon-actions": "^6.4.0-rc.7",
